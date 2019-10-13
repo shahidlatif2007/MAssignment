@@ -1,0 +1,18 @@
+//
+//  Production.xcconfig
+//  Service Center
+//
+//  Created by Shahid Latif on 2019/10/13.
+//  Copyright © 2019 MOHRE. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+DISPLAY_NAME = MOHRE SC
+
+PUBLIC_URL = https:/$()/mobile.mohre.gov.ae
+AUTHENTICATED_URL = https:/$()/google.com
+
+LOG_ENABLED = false
+INSTANCE = PROD
