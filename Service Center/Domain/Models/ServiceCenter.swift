@@ -27,13 +27,13 @@ extension ServiceCenters {
 struct ServiceCenter: Base {
     var id: Int?
     var name: String?
-    var imageURLs:[String]?
-    var workingTime:String?
-    var contact:String?
-    var address:String?
-    var rating:Float?
-    var thumbImageUrl:String?
-    
+    var imageURLs: [URL]?
+    var workingTime: String?
+    var contact: String?
+    var address: String?
+    var rating: Float?
+    var thumbImageUrl: URL?
+    var description: String?
 }
 
 extension ServiceCenter {
@@ -43,11 +43,11 @@ extension ServiceCenter {
         id <- map["EntityId"]
         name <- map["Name"]
         rating <- map["Rating"]
-        imageURLs <- map["ImageUrls"]
-        thumbImageUrl <- map["ThumbImageUrl"]
+        imageURLs <- (map["ImageUrls"], URLTransform())
+        thumbImageUrl <- (map["ThumbImageUrl"], URLTransform())
         workingTime <- map["WorkingTime"]
         contact <- map["Contact.Telephone"]
         address <- map["Contact.Address"]
-        
+        description <- map["Description"]
     }
 }

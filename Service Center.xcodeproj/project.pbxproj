@@ -10,6 +10,10 @@
 		130ADDB5CBEA950E92B9BD5C /* Pods_Service_Center.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7275F117F60389502790702 /* Pods_Service_Center.framework */; };
 		1BFDD19D31C0655C6ADC9C21 /* Pods_Service_Center_Service_CenterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3CA895CA4D3A4C47E93E6B /* Pods_Service_Center_Service_CenterUITests.framework */; };
 		81F9A5393B327FDC3AEBF9D3 /* Pods_Service_CenterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB385D7A07C0D3F4DB626A90 /* Pods_Service_CenterTests.framework */; };
+		F784C5C42354DA0300F1322D /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784C5C32354DA0300F1322D /* HomeTableViewCell.swift */; };
+		F784C5C62354DA6B00F1322D /* ServiceCenterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784C5C52354DA6B00F1322D /* ServiceCenterViewModel.swift */; };
+		F784C5C82354E3D200F1322D /* RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784C5C72354E3D200F1322D /* RxExtensions.swift */; };
+		F784C5CA2354EB2C00F1322D /* ServiceCenterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784C5C92354EB2C00F1322D /* ServiceCenterDetailViewModel.swift */; };
 		F794D4F0235395900023F7E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D4EF235395900023F7E9 /* AppDelegate.swift */; };
 		F794D4F2235395900023F7E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D4F1235395900023F7E9 /* SceneDelegate.swift */; };
 		F794D4FA235395900023F7E9 /* Service_Center.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F794D4F8235395900023F7E9 /* Service_Center.xcdatamodeld */; };
@@ -37,6 +41,8 @@
 		F794D55723543F5C0023F7E9 /* WebServiceCenterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D55623543F5C0023F7E9 /* WebServiceCenterRepository.swift */; };
 		F794D5592354401B0023F7E9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D5582354401B0023F7E9 /* HomeViewModel.swift */; };
 		F794D55C23545BC40023F7E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D55B23545BC40023F7E9 /* DetailViewController.swift */; };
+		F7EE1BDE2354FED200257D96 /* SliderImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EE1BDD2354FED200257D96 /* SliderImageViewCell.swift */; };
+		F7EE1BE02355048900257D96 /* SliderImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EE1BDF2355048900257D96 /* SliderImageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +72,10 @@
 		AC1239939185A5719CBFEE44 /* Pods-Service CenterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service CenterTests.debug.xcconfig"; path = "Target Support Files/Pods-Service CenterTests/Pods-Service CenterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7275F117F60389502790702 /* Pods_Service_Center.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Service_Center.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7269CB7FDF75BFB29BA4554 /* Pods-Service CenterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service CenterTests.release.xcconfig"; path = "Target Support Files/Pods-Service CenterTests/Pods-Service CenterTests.release.xcconfig"; sourceTree = "<group>"; };
+		F784C5C32354DA0300F1322D /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		F784C5C52354DA6B00F1322D /* ServiceCenterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterViewModel.swift; sourceTree = "<group>"; };
+		F784C5C72354E3D200F1322D /* RxExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExtensions.swift; sourceTree = "<group>"; };
+		F784C5C92354EB2C00F1322D /* ServiceCenterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterDetailViewModel.swift; sourceTree = "<group>"; };
 		F794D4EC235395900023F7E9 /* Service Center.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Service Center.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F794D4EF235395900023F7E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F794D4F1235395900023F7E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +110,8 @@
 		F794D55623543F5C0023F7E9 /* WebServiceCenterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceCenterRepository.swift; sourceTree = "<group>"; };
 		F794D5582354401B0023F7E9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F794D55B23545BC40023F7E9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F7EE1BDD2354FED200257D96 /* SliderImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderImageViewCell.swift; sourceTree = "<group>"; };
+		F7EE1BDF2355048900257D96 /* SliderImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderImageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +239,7 @@
 				F794D52823539DF90023F7E9 /* AppConfiguration.swift */,
 				F794D52A2353A02A0023F7E9 /* Logger.swift */,
 				F794D52C2353A1A60023F7E9 /* Utils.swift */,
+				F784C5C72354E3D200F1322D /* RxExtensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -281,6 +294,9 @@
 			isa = PBXGroup;
 			children = (
 				F794D5582354401B0023F7E9 /* HomeViewModel.swift */,
+				F784C5C52354DA6B00F1322D /* ServiceCenterViewModel.swift */,
+				F784C5C92354EB2C00F1322D /* ServiceCenterDetailViewModel.swift */,
+				F7EE1BDF2355048900257D96 /* SliderImageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -289,7 +305,6 @@
 			isa = PBXGroup;
 			children = (
 				F794D5462353ADE10023F7E9 /* Home */,
-				F794D55A23545B9D0023F7E9 /* Detail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,7 +338,9 @@
 			isa = PBXGroup;
 			children = (
 				F794D5492353ADFC0023F7E9 /* HomeViewController.swift */,
+				F784C5C32354DA0300F1322D /* HomeTableViewCell.swift */,
 				F794D5472353ADEF0023F7E9 /* Home.storyboard */,
+				F794D55A23545B9D0023F7E9 /* Detail */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -343,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				F794D55B23545BC40023F7E9 /* DetailViewController.swift */,
+				F7EE1BDD2354FED200257D96 /* SliderImageViewCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -588,14 +606,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F794D52623539C710023F7E9 /* MOHREAPI.swift in Sources */,
+				F784C5C62354DA6B00F1322D /* ServiceCenterViewModel.swift in Sources */,
 				F794D4FA235395900023F7E9 /* Service_Center.xcdatamodeld in Sources */,
 				F794D52D2353A1A60023F7E9 /* Utils.swift in Sources */,
 				F794D5592354401B0023F7E9 /* HomeViewModel.swift in Sources */,
 				F794D4F0235395900023F7E9 /* AppDelegate.swift in Sources */,
 				F794D55523543F4E0023F7E9 /* LocalServiceCenterRepository.swift in Sources */,
+				F7EE1BE02355048900257D96 /* SliderImageViewModel.swift in Sources */,
+				F784C5C82354E3D200F1322D /* RxExtensions.swift in Sources */,
 				F794D55C23545BC40023F7E9 /* DetailViewController.swift in Sources */,
 				F794D54D235439BB0023F7E9 /* ServiceCenterRepository.swift in Sources */,
 				F794D5342353A5E90023F7E9 /* ActivityIndicator.swift in Sources */,
+				F784C5CA2354EB2C00F1322D /* ServiceCenterDetailViewModel.swift in Sources */,
 				F794D53E2353A8B30023F7E9 /* RxObjectMapper.swift in Sources */,
 				F794D55323543F110023F7E9 /* MockServiceCenterRepository.swift in Sources */,
 				F794D4F2235395900023F7E9 /* SceneDelegate.swift in Sources */,
@@ -603,7 +625,9 @@
 				F794D55723543F5C0023F7E9 /* WebServiceCenterRepository.swift in Sources */,
 				F794D52923539DF90023F7E9 /* AppConfiguration.swift in Sources */,
 				F794D52423539C530023F7E9 /* API.swift in Sources */,
+				F784C5C42354DA0300F1322D /* HomeTableViewCell.swift in Sources */,
 				F794D52B2353A02A0023F7E9 /* Logger.swift in Sources */,
+				F7EE1BDE2354FED200257D96 /* SliderImageViewCell.swift in Sources */,
 				F794D55123543CEE0023F7E9 /* GenericResponse.swift in Sources */,
 				F794D54F23543A6C0023F7E9 /* ServiceCenter.swift in Sources */,
 				F794D54A2353ADFC0023F7E9 /* HomeViewController.swift in Sources */,

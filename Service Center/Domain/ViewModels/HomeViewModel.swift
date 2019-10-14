@@ -9,13 +9,23 @@
 import Foundation
 
 import RxSwift
+import RxCocoa
 
 class HomeViewModel {
     private var page = 1
+    
+    var serviceCenters: BehaviorRelay<[ServiceCenter]> = BehaviorRelay(value: [])
+    
     private let repository: ServiceCenterRepository
+    
+    let disposeBag = DisposeBag()
     
     init(serviceCenterRepository: ServiceCenterRepository = WebServiceCenterRepository()) {
         repository = serviceCenterRepository
+        
+        fetchInitialServiceCenters()
+            .bind(to: serviceCenters)
+            .disposed(by: disposeBag)
     }
     
     func fetchInitialServiceCenters() -> Observable<[ServiceCenter]> {

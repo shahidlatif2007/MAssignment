@@ -12,35 +12,40 @@ class HomeViewController: UIViewController {
     
     private let viewModel = HomeViewModel()
 
+    @IBOutlet weak var serviceCentersTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        viewModel.fetchInitialServiceCenters()
-            .subscribe(onNext: { (serviceCenters: [ServiceCenter]) in
-                print(serviceCenters)
-            }, onError: { (error: Error) in
-                print(error)
-            })
+        viewModel.serviceCenters
+            .bind(to: serviceCentersTableView.rx.items) { (tableView, row, serviceCenter) in
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeTableViewCell else { return UITableViewCell() }
+                cell.viewModel = ServiceCenterViewModel(serviceCenter: serviceCenter)
+                return cell
+            }
             .disposed(by: rx.disposeBag)
+        
+        serviceCentersTableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                self?.performSegue(withIdentifier: "DetailSegue", sender: indexPath)
+            }).disposed(by: rx.disposeBag)
+        
     }
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource  {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        40
+// MARK: Segue related
+extension HomeViewController {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        guard case identifier = "DetailSegue" else { return false }
+        return true
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let homeCellIdentifier = "homeCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: homeCellIdentifier, for: indexPath)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "detailScreen", sender: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailViewController = segue.destination as? DetailViewController else { return }
+        guard let indexPath = sender as? IndexPath else { return }
+        
+        let serviceCenter = viewModel.serviceCenters.value[indexPath.row]
+        
+        detailViewController.viewModel = ServiceCenterDetailViewModel(serviceCenter: serviceCenter)
     }
 }
-
-
