@@ -63,18 +63,7 @@ extension MOHREAPI {
         /// Subscribing to handle server errors globally if required
         request
             .mapObject(MOHREResponse.self)
-            .subscribe(onNext: { (mohreResponse: MOHREResponse?) in
-                guard shouldShowAlerts else { return }
-                guard let success = mohreResponse?.success, !success else { return }
-
-                /// Handling server errors
-                switch mohreResponse?.statusCode {
-                case .none:
-                    Utils.showAlertView(message: MOHREAPIErrors.genericError.localizedDescription, handler: nil)
-                case .some:
-                    Utils.showAlertView(message: mohreResponse?.message, handler: nil)
-                }
-            }, onError: { (error: Error) in
+            .subscribe(onError: { (error: Error) in
                 handleError(error: error, shouldShowAlerts: shouldShowAlerts)
             })
             .disposed(by: Utils.disposeBag)
@@ -110,17 +99,21 @@ import ObjectMapper
 
 // MARK: - Response from MOHRE API
 struct MOHREResponse: Base {
-    var success: Bool?
-    var statusCode: Int?
-    var requestId: String?
-    var message: String?
+    var entityErrors: [EntityError]?
+    
+    struct EntityError: Base {
+        var description: String?
+        
+        init?(map: Map) { }
+        
+        mutating func mapping(map: Map) {
+            description <- map["description"]
+        }
+    }
     
     init?(map: Map) { }
     
     mutating func mapping(map: Map) {
-        success <- map["success"]
-        statusCode <- map["statusCode"]
-        requestId <- map["reqID"]
-        message <- map["message"]
+        entityErrors <- map["EntityErrors"]
     }
 }

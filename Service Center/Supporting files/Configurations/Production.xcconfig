@@ -12,7 +12,7 @@
 DISPLAY_NAME = MOHRE SC
 
 PUBLIC_URL = https:/$()/mobile.mohre.gov.ae
-AUTHENTICATED_URL = https:/$()/google.com
+
 
 LOG_ENABLED = false
 INSTANCE = PROD

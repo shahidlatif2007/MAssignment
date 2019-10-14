@@ -29,6 +29,14 @@
 		F794D5412353ACB50023F7E9 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F794D5402353ACB50023F7E9 /* Development.xcconfig */; };
 		F794D5482353ADEF0023F7E9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F794D5472353ADEF0023F7E9 /* Home.storyboard */; };
 		F794D54A2353ADFC0023F7E9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D5492353ADFC0023F7E9 /* HomeViewController.swift */; };
+		F794D54D235439BB0023F7E9 /* ServiceCenterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D54C235439BB0023F7E9 /* ServiceCenterRepository.swift */; };
+		F794D54F23543A6C0023F7E9 /* ServiceCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D54E23543A6C0023F7E9 /* ServiceCenter.swift */; };
+		F794D55123543CEE0023F7E9 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D55023543CEE0023F7E9 /* GenericResponse.swift */; };
+		F794D55323543F110023F7E9 /* MockServiceCenterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D55223543F110023F7E9 /* MockServiceCenterRepository.swift */; };
+		F794D55523543F4E0023F7E9 /* LocalServiceCenterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D55423543F4E0023F7E9 /* LocalServiceCenterRepository.swift */; };
+		F794D55723543F5C0023F7E9 /* WebServiceCenterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D55623543F5C0023F7E9 /* WebServiceCenterRepository.swift */; };
+		F794D5592354401B0023F7E9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D5582354401B0023F7E9 /* HomeViewModel.swift */; };
+		F794D55C23545BC40023F7E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D55B23545BC40023F7E9 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +92,14 @@
 		F794D5452353ACDF0023F7E9 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		F794D5472353ADEF0023F7E9 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		F794D5492353ADFC0023F7E9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F794D54C235439BB0023F7E9 /* ServiceCenterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenterRepository.swift; sourceTree = "<group>"; };
+		F794D54E23543A6C0023F7E9 /* ServiceCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCenter.swift; sourceTree = "<group>"; };
+		F794D55023543CEE0023F7E9 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		F794D55223543F110023F7E9 /* MockServiceCenterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceCenterRepository.swift; sourceTree = "<group>"; };
+		F794D55423543F4E0023F7E9 /* LocalServiceCenterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalServiceCenterRepository.swift; sourceTree = "<group>"; };
+		F794D55623543F5C0023F7E9 /* WebServiceCenterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceCenterRepository.swift; sourceTree = "<group>"; };
+		F794D5582354401B0023F7E9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F794D55B23545BC40023F7E9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +252,7 @@
 		F794D5352353A7AF0023F7E9 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				F794D54B235439A10023F7E9 /* Service Center */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -254,6 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				F794D53A2353A8110023F7E9 /* Base.swift */,
+				F794D55023543CEE0023F7E9 /* GenericResponse.swift */,
+				F794D54E23543A6C0023F7E9 /* ServiceCenter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,6 +280,7 @@
 		F794D5382353A7CC0023F7E9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F794D5582354401B0023F7E9 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -269,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				F794D5462353ADE10023F7E9 /* Home */,
+				F794D55A23545B9D0023F7E9 /* Detail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,6 +326,25 @@
 				F794D5472353ADEF0023F7E9 /* Home.storyboard */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		F794D54B235439A10023F7E9 /* Service Center */ = {
+			isa = PBXGroup;
+			children = (
+				F794D54C235439BB0023F7E9 /* ServiceCenterRepository.swift */,
+				F794D55223543F110023F7E9 /* MockServiceCenterRepository.swift */,
+				F794D55423543F4E0023F7E9 /* LocalServiceCenterRepository.swift */,
+				F794D55623543F5C0023F7E9 /* WebServiceCenterRepository.swift */,
+			);
+			path = "Service Center";
+			sourceTree = "<group>";
+		};
+		F794D55A23545B9D0023F7E9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F794D55B23545BC40023F7E9 /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,14 +590,22 @@
 				F794D52623539C710023F7E9 /* MOHREAPI.swift in Sources */,
 				F794D4FA235395900023F7E9 /* Service_Center.xcdatamodeld in Sources */,
 				F794D52D2353A1A60023F7E9 /* Utils.swift in Sources */,
+				F794D5592354401B0023F7E9 /* HomeViewModel.swift in Sources */,
 				F794D4F0235395900023F7E9 /* AppDelegate.swift in Sources */,
+				F794D55523543F4E0023F7E9 /* LocalServiceCenterRepository.swift in Sources */,
+				F794D55C23545BC40023F7E9 /* DetailViewController.swift in Sources */,
+				F794D54D235439BB0023F7E9 /* ServiceCenterRepository.swift in Sources */,
 				F794D5342353A5E90023F7E9 /* ActivityIndicator.swift in Sources */,
 				F794D53E2353A8B30023F7E9 /* RxObjectMapper.swift in Sources */,
+				F794D55323543F110023F7E9 /* MockServiceCenterRepository.swift in Sources */,
 				F794D4F2235395900023F7E9 /* SceneDelegate.swift in Sources */,
 				F794D5312353A3DC0023F7E9 /* MOHREActivityIndicator.swift in Sources */,
+				F794D55723543F5C0023F7E9 /* WebServiceCenterRepository.swift in Sources */,
 				F794D52923539DF90023F7E9 /* AppConfiguration.swift in Sources */,
 				F794D52423539C530023F7E9 /* API.swift in Sources */,
 				F794D52B2353A02A0023F7E9 /* Logger.swift in Sources */,
+				F794D55123543CEE0023F7E9 /* GenericResponse.swift in Sources */,
+				F794D54F23543A6C0023F7E9 /* ServiceCenter.swift in Sources */,
 				F794D54A2353ADFC0023F7E9 /* HomeViewController.swift in Sources */,
 				F794D53B2353A8110023F7E9 /* Base.swift in Sources */,
 			);

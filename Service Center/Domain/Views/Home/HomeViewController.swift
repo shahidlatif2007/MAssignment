@@ -9,31 +9,38 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    private let viewModel = HomeViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
-        MOHREAPI
-            .get(authenticated: false, shouldShowAlerts: true, endpoint: "servicecenters", params: ["page": "1"])
-            .subscribe(onNext: { (data) in
-                print(data)
-            }, onError: { (error) in
+        
+        viewModel.fetchInitialServiceCenters()
+            .subscribe(onNext: { (serviceCenters: [ServiceCenter]) in
+                print(serviceCenters)
+            }, onError: { (error: Error) in
                 print(error)
             })
             .disposed(by: rx.disposeBag)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource  {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        40
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let homeCellIdentifier = "homeCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: homeCellIdentifier, for: indexPath)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "detailScreen", sender: nil)
+    }
+}
+
+
