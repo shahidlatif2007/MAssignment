@@ -11,7 +11,7 @@ import Foundation
 import ObjectMapper
 
 struct ServiceCenters: Base {
-    var totalPages: String?
+    var totalPages: Int?
     var serviceCenters: [ServiceCenter]?
 }
 
@@ -51,3 +51,54 @@ extension ServiceCenter {
         description <- map["Description"]
     }
 }
+
+import CoreData
+import RxCoreData
+
+// MARK: Core Date related
+func == (lhs: ServiceCenter, rhs: ServiceCenter) -> Bool {
+    return lhs.id == rhs.id
+}
+
+extension ServiceCenter : Equatable { }
+
+extension ServiceCenter: Persistable {
+    var identity: String {
+        return "\(id ?? 0)"
+    }
+    
+    typealias T = NSManagedObject
+    
+    static var entityName: String {
+        return "MOHREServiceCenter"
+    }
+    
+    static var primaryAttributeName: String {
+        return "id"
+    }
+    
+    init(entity: T) {
+        id = entity.value(forKey: "id") as? Int
+        rating = entity.value(forKey: "rating") as? Float
+        name = entity.value(forKey: "name") as? String
+        address = entity.value(forKey: "address") as? String
+        workingTime = entity.value(forKey: "workingTime") as? String
+        contact = entity.value(forKey: "contact") as? String
+    }
+    
+    func update(_ entity: T) {
+        entity.setValue(id, forKey: "id")
+        entity.setValue(rating, forKey: "rating")
+        entity.setValue(name, forKey: "name")
+        entity.setValue(address, forKey: "address")
+        entity.setValue(workingTime, forKey: "workingTime")
+        entity.setValue(contact, forKey: "contact")
+        
+        do {
+            try entity.managedObjectContext?.save()
+        } catch let e {
+            print(e)
+        }
+    }
+}
+

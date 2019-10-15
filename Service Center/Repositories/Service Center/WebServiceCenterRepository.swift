@@ -11,7 +11,7 @@ import RxSwift
 
 struct WebServiceCenterRepository: ServiceCenterRepository {
     func getPage(page: Int) -> Observable<ServiceCenters?> {
-        return MOHREAPI.get(authenticated: false, shouldShowAlerts: true, endpoint: "servicecenters", params: ["page": "1"])
+        return MOHREAPI.get(authenticated: false, shouldShowAlerts: true, endpoint: "servicecenters", params: ["page": page])
             .mapObject(GenericResponse<ServiceCenters>.self)
             .map { $0?.body }
     }

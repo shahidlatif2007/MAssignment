@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+import RxSwift
+import RxCoreData
+
+struct LocalServiceCenterRepository: ServiceCenterRepository {
+    func getPage(page: Int) -> Observable<ServiceCenters?> {
+        return CoreDataManager.shared.managedObjectContext.rx.entities(ServiceCenter.self, predicate: nil, sortDescriptors: nil)
+            .map { ServiceCenters(totalPages: 2, serviceCenters: $0) } 
+    }
+}

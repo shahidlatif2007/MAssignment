@@ -23,8 +23,10 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.pageControl.numberOfPages = 4
+
+        viewModel.sliderImageUrls.map{$0.count}
+            .bind(to: pageControl.rx.numberOfPages)
+            .disposed(by: rx.disposeBag)
         
         viewModel.name
             .bind(to: nameLabel.rx.text)

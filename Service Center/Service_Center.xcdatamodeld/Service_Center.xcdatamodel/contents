@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19A583" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MOHREServiceCenter" representedClassName="MOHREServiceCenter" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="contact" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="rating" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="workingTime" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="MOHREServiceCenter" positionX="-2262.44921875" positionY="-629.94140625" width="237.35546875" height="133"/>
+    </elements>
 </model>

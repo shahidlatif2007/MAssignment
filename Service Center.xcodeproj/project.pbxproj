@@ -43,6 +43,7 @@
 		F794D55C23545BC40023F7E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794D55B23545BC40023F7E9 /* DetailViewController.swift */; };
 		F7EE1BDE2354FED200257D96 /* SliderImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EE1BDD2354FED200257D96 /* SliderImageViewCell.swift */; };
 		F7EE1BE02355048900257D96 /* SliderImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EE1BDF2355048900257D96 /* SliderImageViewModel.swift */; };
+		F7EE1BE223553ECA00257D96 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EE1BE123553ECA00257D96 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		F794D55B23545BC40023F7E9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F7EE1BDD2354FED200257D96 /* SliderImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderImageViewCell.swift; sourceTree = "<group>"; };
 		F7EE1BDF2355048900257D96 /* SliderImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderImageViewModel.swift; sourceTree = "<group>"; };
+		F7EE1BE123553ECA00257D96 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 				F794D52A2353A02A0023F7E9 /* Logger.swift */,
 				F794D52C2353A1A60023F7E9 /* Utils.swift */,
 				F784C5C72354E3D200F1322D /* RxExtensions.swift */,
+				F7EE1BE123553ECA00257D96 /* CoreDataManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				F794D55123543CEE0023F7E9 /* GenericResponse.swift in Sources */,
 				F794D54F23543A6C0023F7E9 /* ServiceCenter.swift in Sources */,
 				F794D54A2353ADFC0023F7E9 /* HomeViewController.swift in Sources */,
+				F7EE1BE223553ECA00257D96 /* CoreDataManager.swift in Sources */,
 				F794D53B2353A8110023F7E9 /* Base.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

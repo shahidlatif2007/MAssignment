@@ -15,6 +15,8 @@ target 'Service Center' do
   pod 'Log', '1.0'
   pod 'NVActivityIndicatorView', '4.8.0'
   pod 'NSObject+Rx', '5.0.2'
+  pod 'UIScrollView-InfiniteScroll', '1.1.0'
+  pod 'RxCoreData'
 
   target 'Service CenterTests' do
     inherit! :search_paths

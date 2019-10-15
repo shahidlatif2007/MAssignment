@@ -21,6 +21,7 @@ import SDWebImage
 extension Reactive where Base: UIImageView {
     func imageURL(withPlaceholder placeholderImage: UIImage?, options: SDWebImageOptions = [], progress: SDWebImageDownloaderProgressBlock? = nil) -> Binder<URL?> {
         return Binder(self.base) { imageView, url in
+            imageView.sd_imageIndicator = SDWebImageActivityIndicator.large
             imageView.sd_setImage(with: url, placeholderImage: placeholderImage, options: options, progress: progress, completed: nil)
         }
     }

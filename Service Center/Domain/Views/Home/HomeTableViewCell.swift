@@ -23,20 +23,20 @@ class HomeTableViewCell: UITableViewCell {
                 .bind(to: thumbnailImageView.rx.imageURL(withPlaceholder: #imageLiteral(resourceName: "default")))
                 .disposed(by: rx.disposeBag)
             
-            viewModel.nameLabel
+            viewModel.name
                 .bind(to: nameLabel.rx.text)
                 .disposed(by: rx.disposeBag)
             
-            viewModel.ratingLabel
+            viewModel.rating
                 .map { "\($0 ?? 0)"}
                 .bind(to: ratingLabel.rx.text)
                 .disposed(by: rx.disposeBag)
             
-            viewModel.addressLabel
+            viewModel.address
                 .bind(to: addressLabel.rx.text)
                 .disposed(by: rx.disposeBag)
             
-            viewModel.contactNumberLabel
+            viewModel.contactNumber
                 .bind(to: contactNumberLabel.rx.text)
                 .disposed(by: rx.disposeBag)
         }

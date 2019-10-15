@@ -13,16 +13,16 @@ import RxCocoa
 
 struct ServiceCenterViewModel {
     let imageUrl: BehaviorRelay<URL?> = BehaviorRelay(value: nil)
-    let nameLabel: BehaviorRelay<String?> = BehaviorRelay(value: "--")
-    let ratingLabel: BehaviorRelay<Float?> = BehaviorRelay(value: 0)
-    let addressLabel: BehaviorRelay<String?> = BehaviorRelay(value: "--")
-    let contactNumberLabel: BehaviorRelay<String?> = BehaviorRelay(value: "--")
+    let name: BehaviorRelay<String?> = BehaviorRelay(value: "--")
+    let rating: BehaviorRelay<Float?> = BehaviorRelay(value: 0)
+    let address: BehaviorRelay<String?> = BehaviorRelay(value: "--")
+    let contactNumber: BehaviorRelay<String?> = BehaviorRelay(value: "--")
     
     init(serviceCenter: ServiceCenter) {
         imageUrl.accept(serviceCenter.thumbImageUrl)
-        nameLabel.accept(serviceCenter.name)
-        ratingLabel.accept(serviceCenter.rating)
-        addressLabel.accept(serviceCenter.address)
-        contactNumberLabel.accept(serviceCenter.contact)
+        name.accept(serviceCenter.name)
+        rating.accept(serviceCenter.rating)
+        address.accept(serviceCenter.address)
+        contactNumber.accept(serviceCenter.contact)
     }
 }
